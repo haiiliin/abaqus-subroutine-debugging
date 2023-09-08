@@ -104,15 +104,8 @@ Uncomment all the lines that end with comment of Debugging.
 Add some codes like this to pause at the subroutine after the declaration of variables, like this:
 
 ```fortran
-!-------------------------- FOR DEBUGGING ------------------------------------
-LOGICAL :: FIRSTRUN = .TRUE.
-INTEGER TEMPVAR
-IF (FIRSTRUN == .TRUE.) THEN
-    WRITE(*, *) 'PLEASE INPUT A VALUE:'
-    READ(*, *) TEMPVAR
-    FIRSTRUN = .FALSE.
-END IF
-TEMPVAR = 1234
+WRITE(*, *) "DEBUGGING, PRESS ENTER TO CONTINUE"
+READ(*, *)
 ```
 
 ## Run Abaqus command to submit the job
@@ -135,7 +128,7 @@ End Analysis Input File Processor
 Begin Abaqus/Standard Analysis
 10/30/2021 11:51:17 PM
 Run standard.exe
-PLEASE INPUT A VALUE:
+DEBUGGING, PRESS ENTER TO CONTINUE
 ```
 
 ## Attach to process in Visual Studio
@@ -144,7 +137,7 @@ Open your subroutine file in Visual Studio, click `Debug -> Attach to Process`, 
 
 ## Resume running the subroutine and debug in Visual Studio
 
-Add a breakpoint in the subroutine file in Visual Studio, resume running the subroutine in the command window, i.e., input the temporary value, the subroutine will stop in Visual Studio, and now you can debug your subroutine in Visual Studio!
+Add a breakpoint in the subroutine file in Visual Studio, resume running the subroutine in the command window, i.e., press enter to continue, the subroutine will stop in Visual Studio, and now you can debug your subroutine in Visual Studio!
 
 ## Warning
 
